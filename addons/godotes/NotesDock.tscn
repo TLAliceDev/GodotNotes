@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/godotes/NotesDock.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+margin_right = 170.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer"]
+margin_right = 158.0
+margin_bottom = 628.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ToolButton" type="ToolButton" parent="HBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 158.0
+margin_bottom = 22.0
+text = "New"
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer"]
+margin_left = 174.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+highlight_current_line = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+smooth_scrolling = true
+wrap_enabled = true
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+margin_right = 500.0
+margin_bottom = 200.0
+window_title = "New Note Name:"
+resizable = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmationDialog"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.8
+margin_left = -42.0
+margin_top = -12.0
+margin_right = 42.0
+margin_bottom = 4.0
+
+[node name="TextEdit" type="LineEdit" parent="ConfirmationDialog/MarginContainer"]
+margin_right = 484.0
+margin_bottom = 156.0
+align = 1
+context_menu_enabled = false
+clear_button_enabled = true
+shortcut_keys_enabled = false
+placeholder_text = "File Name"
+
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/VBoxContainer/ToolButton" to="." method="_on_ToolButton_pressed"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]

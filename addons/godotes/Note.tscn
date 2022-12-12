@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/godotes/Note.gd" type="Script" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+script = ExtResource( 1 )
+
+[node name="GodoteNote" type="Button" parent="."]
+margin_right = 107.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "HBoxContainer"
+
+[node name="ToolButton" type="ToolButton" parent="."]
+margin_left = 111.0
+margin_right = 131.0
+margin_bottom = 40.0
+text = "X"
+align = 2
+
+[connection signal="pressed" from="GodoteNote" to="." method="_on_GodoteNote_pressed"]
+[connection signal="pressed" from="ToolButton" to="." method="_on_ToolButton_pressed"]
