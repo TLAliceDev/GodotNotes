@@ -9,7 +9,7 @@ Click on the `Notes` tab next to `AssetLib`
 
 Start taking notes!
 
-### Prview:
+### Preview:
 ### ![godotnotespreview](https://user-images.githubusercontent.com/109485802/207078566-ae7aaa90-45f0-4839-b1d8-5099c902bff9.gif)
 
 
